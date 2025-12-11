@@ -145,6 +145,73 @@ footer #nondisclaimer .social .fa-instagram {
 
 /* Home */
 
+/* --- 1. GENERAL RESPONSIVENESS --- */
+/* Ensure images never overflow their container */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- 2. HEADER FIXES --- */
+/* Instruction: Header background image responsive */
+#home header {
+    /* Change fixed pixel size to 'cover' so it scales with the viewport */
+    background: no-repeat lightgrey url(images/cliff_ocean.jpg);
+    background-size: cover; 
+    background-position: center;
+}
+
+/* --- 3. MAIN AREA LAYOUT --- */
+/* Instruction: Stack at < 600px, 2 columns at >= 600px */
+
+/* Mobile First (Default) Styling */
+.main-content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack vertically by default */
+    gap: 20px; /* Space between the stacked boxes */
+}
+
+.content-box {
+    background: #fff;
+    border: 1px solid #ddd; /* Matches the white box look in screenshots */
+    padding: 20px;
+}
+
+main h1 {
+    text-align: center; /* Center the title as seen in iPad Screenshot */
+}
+
+/* Tablet/Desktop Breakpoint */
+@media (min-width: 600px) {
+    .main-content-wrapper {
+        flex-direction: row; /* Switch to side-by-side */
+    }
+    
+    .content-box {
+        flex: 1; /* Both boxes take equal width */
+        margin: 0 10px; /* Add some side spacing */
+    }
+    
+    /* Reset margin on the wrapper to align nicely */
+    .main-content-wrapper {
+        margin: 0 -10px;
+    }
+}
+
+/* --- 4. PARTNER IMAGES (Matching Screenshots) --- */
+/* Screenshots show these stack differently on mobile */
+section #partners {
+    width: 100%; /* Change from fixed 1200px to fluid width */
+    max-width: 1200px;
+    padding: 2em 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center;
+}
+
+section #partners .partner {
+    margin: 10px; /* Adjust spacing for smaller screens */
+}
 
 
 /* ACTIVATE BELOW WHEN TESTING NAVIGATION AND OTHERS FOR RWD */
